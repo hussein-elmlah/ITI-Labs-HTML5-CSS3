@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Player</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-white d-flex align-items-center justify-content-center min-vh-100">
+    <div class="container">
+        <div class="bg-black p-4 rounded text-center shadow-lg">
+            <div class="d-flex flex-column align-items-center gap-4">
+                <div class="w-100">
+                    <img src="1.jpg" alt="" id="img" class="img-fluid rounded">
+                </div>
+                <audio id="myAudio" src="1.mp3" controls class="mb-3">
+                    Your browser does not support the audio element.
+                </audio>
+                <div class="row g-3">
+                    <div class="col">
+                        <label for="duration" class="form-label">Duration</label>
+                        <input type="range" min="0" max="100" value="0" class="form-range" id="duration">
+                    </div>
+                </div>
+                <div class="d-flex gap-4">
+                    <button class="btn btn-dark" id="play">Play</button>
+                    <button class="btn btn-dark" id="pause">Pause</button>
+                    <button class="btn btn-dark" id="stop">Stop</button>
+                    <button class="btn btn-dark" id="mute">Mute</button>
+                </div>
+                <div class="d-flex flex-column align-items-center">
+                    <div class="row g-3">
+                        <div class="col">
+                            <label for="volume" class="form-label">Volume</label>
+                            <input type="range" min="1" max="100" value="50" class="form-range" id="volume">
+                        </div>
+                        <div class="col">
+                            <label for="speed" class="form-label">Speed</label>
+                            <input type="range" min="1" max="100" value="50" class="form-range" id="speed">
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex gap-4">
+                    <button class="btn btn-dark" id="song1">La Tabky</button>
+                    <button class="btn btn-dark" id="song2">Al Hadika</button>
+                    <button class="btn btn-dark" id="song3">Remy</button>
+                    <button class="btn btn-dark" id="song4">Asdkaa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
