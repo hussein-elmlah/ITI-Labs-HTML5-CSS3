@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lab-map</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <style>
+        .map {
+            height: 450px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <!-- Map Controls Section -->
+        <div class="row">
+            <div class="col-md-6">
+                <button id="getMap" class="btn btn-success">Get Map</button>
+                <button id="locationInfo" disabled class="btn btn-success float-end">Location Info</button>
+            </div>
+        </div>
+
+        <!-- Location Info Table and Map Section -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="table-responsive">
+                    <table class="table table-bordered" style="display: none;">
+                        <thead class="table-success">
+                            <tr>
+                                <th>Latitude</th>
+                                <th>Longitude</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="lat"></td>
+                                <td id="long"></td>
+                                <td id="time"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div id="myMap" class="mt-2 map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function initMap(latitude, longitude) {
+            const myLatlng = { lat: latitude, lng: longitude };
+            const map = new google.maps.Map(document.getElementById("myMap"), {
+                center: myLatlng,
+                zoom: 15,
+            });
+            
+        }
+
+        document.getElementById("getMap").addEventListener("click", () => {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(success, showError);
+            } else {
+                alert("Update your browser to use this feature.");
+            }
+        });
+
+        const locationInfoTable = document.querySelector("table");
+        const locationInfoButton = document.getElementById("locationInfo");
+
+        document.getElementById("locationInfo").addEventListener("click", () => {
+            const isVisible = (locationInfoTable.style.display === "block");
+            locationInfoTable.style.display = isVisible ? "none" : "block";
+        });
+
+        function showError(error) {
+            if (error.code === 1) {
+                alert("You need to give permission to get your location.");
+            } else {
+                console.log("Error:", error.message);
+            }
+        }
+
+        function success(position) {
+            const { latitude, longitude } = position.coords;
+            document.getElementById("lat").innerText = latitude;
+            document.getElementById("long").innerText = longitude;
+            document.getElementById("time").innerText = new Date();
+            document.getElementById("locationInfo").removeAttribute("disabled");
+
+            initMap(latitude, longitude);
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap"></script>
+
+</body>
+
+</html>

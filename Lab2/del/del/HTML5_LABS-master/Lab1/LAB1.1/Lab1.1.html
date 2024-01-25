@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Lab1.1.css">
+  <title>Change Email Address</title>
+</head>
+<body>
+
+ <form>
+
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" placeholder="User" pattern="[a-zA-Z0-9_]{2,10}" 
+         title="Username must be from 2 to 10 characters and can only contain letters, numbers, and underscores." required>
+  <br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" pattern="[a-zA-Z0-9]+@gmail.com" placeholder="example@gmail.com" 
+         title="Email must be like example@gmail.com" required>
+  <br>
+
+  <label for="phone">Phone Number:</label>
+  <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit" 
+         title="Must be a 10-digit number." required>
+  <br>
+    <input type="submit" value="Submit">
+ 
+ </form>
+
+</body>
+</html>

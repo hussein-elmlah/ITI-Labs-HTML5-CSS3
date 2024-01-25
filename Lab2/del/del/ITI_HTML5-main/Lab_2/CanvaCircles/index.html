@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva Game</title>
+    <style>
+        body, html {
+            padding: 0;
+            margin: 0;
+        }
+        #canvaContainer {
+            width: 100%;
+            height: calc(100vh - 40px);
+        }
+        
+        #myCanvas {
+            display: block;
+            margin: 0 auto;
+            border: 1px solid grey;
+        }
+    </style>
+</head>
+<body>
+    <input type="color" id="color" value="#ff0000" />
+    <button id="clicker">Click me</button><br>
+    <div id="canvaContainer">
+        <canvas id="myCanvas" width="1300px" height="600px" style="border:1px solid grey"></canvas>
+    </div>
+</body>
+<script src="scripts.js"></script>
+</html>

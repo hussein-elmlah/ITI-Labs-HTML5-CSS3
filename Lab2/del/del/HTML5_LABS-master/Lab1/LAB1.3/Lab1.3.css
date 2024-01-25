@@ -1,0 +1,69 @@
+ body {
+            font-family: Arial, sans-serif;
+            background-color: #8458B3;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+            #player-container {
+                text-align: center;
+                width: 500px;
+                height: 800px;
+                margin: auto;
+                background-color: #d0bdf4;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+                border-radius: 15px;
+            }
+
+            #media-image {
+                width: 400px;
+                height: 250px;
+                margin: 20px auto 0;
+            }
+            
+            #myAudio {
+                width: 70%; 
+                margin: 15px auto 0;
+                margin-bottom: 1px ;
+            }
+
+            input[type="range"] {
+                width: 50%; 
+                margin-top: 5px;
+                margin-left: 20px;
+            }
+            label {
+                font-weight: bold;
+            }
+
+            button {
+                width: 70%; 
+                margin: 5px auto;
+                padding: 5px;
+                border-radius: 15px;
+                background-color: #8458B3;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                color: #fff;
+            }
+
+            .additional-container {
+                display: flex;
+                justify-content: space-around;
+                width: 70%;
+                margin: 0 auto;
+            }
+
+            .additional {
+                width: 23%; 
+                padding: 5px;
+                border-radius: 15px;
+                background-color: black; 
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                color: #fff;
+            }
+        

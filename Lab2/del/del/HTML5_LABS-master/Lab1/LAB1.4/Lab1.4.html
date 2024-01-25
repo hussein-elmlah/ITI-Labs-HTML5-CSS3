@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Input, Range, and Progress Interaction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 20px;
+            text-align: center;
+        }
+
+        input, output {
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        progress {
+            appearance: none;
+            -webkit-appearance: none; 
+            border: none; 
+            width: 20%; 
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: antiquewhite;
+            box-shadow: 0 0 3px red inset;
+        }
+
+        progress::-webkit-progress-value {
+            background: darkgoldenrod;
+        }
+
+        #progressContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        #progressText {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <input type="text" id="textInput" oninput="updateRange(this.value)">
+
+    <input type="range" id="rangeInput" min="0" max="100" value="0" oninput="updateText(this.value)">
+    
+    <div id="progressContainer">
+        <progress id="progressBar" value="0" max="100" oninput="updateText(this.value)"></progress>
+        <span id="progressText">0%</span>
+    </div>
+
+    <script>
+        function updateRange(value) {
+            document.getElementById('rangeInput').value = value;
+            updateProgressBar(value);
+        }
+
+        function updateText(value) {
+            document.getElementById('textInput').value = value;
+            updateProgressBar(value);
+        }
+
+        function updateProgressBar(value) {
+            var progressBar = document.getElementById('progressBar');
+            var progressText = document.getElementById('progressText');
+
+            progressBar.value = value;
+            progressText.textContent = value + '%';
+        }
+    </script>
+
+</body>
+</html>

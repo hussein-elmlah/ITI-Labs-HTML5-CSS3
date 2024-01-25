@@ -1,0 +1,44 @@
+body, html {
+    padding: 0;
+    margin: 0;
+}
+#background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, white, rgb(95, 219, 250));
+}
+.music-player {
+    background-color: rgb(46, 19, 19);
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    margin: auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+
+#imgcontainer {
+    width: 250px;
+    height: 200px;
+}
+#img {
+    width: 100%;
+    height: 100%;
+}
+.buttons {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 0px 10px 0px 10px;
+    font-size: 14px;
+}
+
+.buttons:hover {
+    cursor: pointer;
+}
+#controls {
+    color: white;
+}

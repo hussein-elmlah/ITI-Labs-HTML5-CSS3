@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="background">
+        <div class="music-player">
+            <div id="imgcontainer">
+                <img src="1.jpg" alt="" id="img">
+            </div>
+            <audio id="myAudio" src="1.mp3" controls>
+                Your browser does not support the audio element.
+            </audio>
+            <div id="buttonscontainer">
+                <button class="buttons" id="play">play</button>
+                <button class="buttons" id="pause">pause</button>
+                <button class="buttons" id="stop">stop</button>
+                <button class="buttons" id="mute">mute</button>
+            </div>
+            <div id="controls">
+                <table>
+                    <tr>
+                        <th>Volume</th>
+                        <th>
+                            <input type="range" min="1" max="100" value="50" class="slider" id="volume">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Speed</th>
+                        <th>
+                            <input type="range" min="1" max="100" value="50" class="slider" id="speed">
+                        </th>
+                    </tr>
+                </table>
+            </div>
+            <div id="songs">
+                <button class="songbuttons" id="song1">La Tabky</button>
+                <button class="songbuttons" id="song2">Al Hadika</button>
+                <button class="songbuttons" id="song3">Remy</button>
+                <button class="songbuttons" id="song4">Asdkaa</button>
+            </div>
+          </div>
+    </div>
+</body>
+<script src="scripts.js"></script>
+</html>

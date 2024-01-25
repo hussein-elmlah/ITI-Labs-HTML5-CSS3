@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bars</title>
+    <style>
+        .slidercontainer {
+            display:flex;
+        }
+        #slidertextbox {
+            width: 100px;
+        }
+        progress {
+            width: 200px;
+            height: 20px;
+            background-color: red;
+        }
+        progress::-webkit-progress-bar {
+            background-image: linear-gradient(to right, white, red);
+        }
+    </style>
+</head>
+<body>
+    <div class="slidercontainer">
+        <input type="text" id="slidertextbox" oninput="validateNumberRange(this)" >
+        <input type="range" min="1" max="8" value="1" class="slider" id="myRange">
+        <span id="sliderval">1</span>
+    </div>
+    <br><br><br>
+    <div class="progresscontainer">
+        <span>progress</span>
+        <progress value="20" max="100"></progress>
+        <span id="progval">20%</span>
+    </div>
+
+</body>
+<script src="scripts.js"></script>
+</html>
