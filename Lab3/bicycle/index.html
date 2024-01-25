@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2-bicycle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        #bicycle{
+            height: 200px;
+            width: 250px;
+            position: absolute;
+            top: 510px;
+            left: 0;
+            transition: transform 0.5s linear;
+        }
+
+        @keyframes cycling {
+            0% {
+                left: 0;
+            }
+            50% {
+                left: calc(100% - 300px);
+            }
+            100% {
+                left: 0;
+            }
+        }
+
+        @keyframes rotate1 {
+            0%{
+                transform: rotateY(90deg);
+            }
+            100%{
+                transform: rotateY(180deg);
+            }
+        }
+
+        @keyframes rotate2 {
+            0%{
+                transform: rotateY(90deg);
+            }
+            100%{
+                transform: rotateY(180deg);
+            }
+        }
+    </style>
+</head>
+<body class="bg-body-secondary">
+
+    <section class="bycicle vh-100">
+        <div class="d-block">
+            <img src="./imgs/—Pngtree—cartoon characters ride bicycles_4141664.png" id="bicycle" alt="">
+        </div>
+    </section>
+
+    <script>
+        const bicycle = document.getElementById('bicycle');
+        const container = bicycle.parentElement;
+
+        let left = 0;
+        let sign = 1;
+
+        let ticking = false;
+
+        bicycle.style.left = `${left}px`;
+        bicycle.style.transform = `scaleX(${sign})`;
+
+        function translate() {
+            left += sign * 7;
+
+            if (left + bicycle.offsetWidth >= container.clientWidth) {
+                left = container.clientWidth - bicycle.offsetWidth;
+                sign *= -1;
+            } else if (left <= 0) {
+                left = 0;
+                sign *= -1;
+            }
+
+            if (ticking) {
+                return;
+            }
+
+            requestAnimationFrame(() => {
+                bicycle.style.left = `${left}px`;
+                bicycle.style.transform = `scaleX(${sign})`;
+
+                ticking = false;
+            });
+
+            ticking = true;
+        }
+
+        setInterval(translate, 10);
+    </script>
+</body>
+</html>

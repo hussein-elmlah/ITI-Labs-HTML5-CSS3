@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Q1-Ball</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        --varLeft: 400px;
+      }
+      section {
+        padding-top: 200px;
+        position: relative;
+      }
+      #player1 {
+        transform: rotateY(180deg);
+        width: 200px;
+        height: 400px;
+        position: absolute;
+        left: 1000px;
+      }
+
+      #player2 {
+        transform: rotateY(180deg);
+        width: 200px;
+        height: 400px;
+        position: absolute;
+        left: 280px;
+      }
+
+      #grass {
+        width: 600px;
+        height: 100px;
+        position: absolute;
+        top: 495px;
+        left: 430px;
+      }
+
+      #ball {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 495px;
+        left: var(--varLeft);
+        animation: pass 4s infinite linear, rotate 2s infinite linear;
+      }
+
+      @keyframes pass {
+        0% {
+          left: calc(var(--varLeft) - 40px);
+        }
+        50% {
+          left: calc(var(--varLeft) + 550px);
+        }
+        100% {
+          left: calc(var(--varLeft) - 40px);
+        }
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-body-secondary">
+    <section>
+      <img src="./imgs/player1.png" id="player1" alt="" />
+      <img src="./imgs/grass.png" id="grass" alt="" />
+      <img src="./imgs/player2.png" id="player2" alt="" />
+      <img src="./imgs/Black-Red_Egyptian_Soccer_ball.png" id="ball" />
+    </section>
+  </body>
+</html>
